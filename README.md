@@ -34,38 +34,38 @@ This project is a simple blog built using Next.js with TypeScript and styled wit
 
 1. **Clone the Repository:**
 
-clone the repo, cd into the project and run development server
+Clone the repo, cd into the project and run development server
 
-```bash
-git clone https://github.com/Nanguti/techprise-blog.git
-cd techprise-blog
-```
+    ```bash
+    git clone https://github.com/Nanguti/techprise-blog.git
+    cd techprise-blog
+    ```
 
 2. **Install dependencies and run development server**
 
-```bash
-npm install
-npm run dev
-```
+   ```bash
+   npm install
+   npm run dev
+   ```
 
 3. **Set Environment Variables:**
    Create a `.env.local` file in the root directory and add the following environment variables:
 
-```bash
-MONGODB_URI=<your-mongodb-uri>
-NEXTAUTH_URL=http://localhost:3000/
-GOOGLE_CLIENT_ID=<your-google-client-id>
-GOOGLE_CLIENT_SECRET=<your-google-client-secret>
-```
+   ```bash
+   MONGODB_URI=<your-mongodb-uri>
+   NEXTAUTH_URL=http://localhost:3000/
+   GOOGLE_CLIENT_ID=<your-google-client-id>
+   GOOGLE_CLIENT_SECRET=<your-google-client-secret>
+   ```
 
-Visit Google Cloud Console[Google Cloud Console](https://console.cloud.google.com/) to set, `GOOGLE_CLIENT_ID=<your-google-client-id>`, and
-`GOOGLE_CLIENT_SECRET=<your-google-client-secret>`. This setup will enable you to login using google account.
+   Visit Google Cloud Console[Google Cloud Console](https://console.cloud.google.com/) to set, `GOOGLE_CLIENT_ID=<your-google-client-id>`, and
+   `GOOGLE_CLIENT_SECRET=<your-google-client-secret>`. This setup will enable you to login using google account.
 
 4. **Start the Development Server:**
 
-```bash
-npm run dev
-```
+   ```bash
+   npm run dev
+   ```
 
 5. **View the Application:**
    Open [http://localhost:3000](http://localhost:3000) in your browser.
