@@ -7,6 +7,7 @@ import { getAllPosts } from "@utils/api";
 import { Post } from "@utils/types";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import SearchBar from "@components/SearchBar";
 
 interface HomeProps {}
 
@@ -46,6 +47,21 @@ const Home: React.FC<HomeProps> = () => {
   const handlePostDetail = (slug: string): void => {
     router.push(`/posts/${slug}`);
   };
+  const fetchPosts = async (searchQuery?: string) => {
+    setIsLoading(true);
+    try {
+      // Pass the searchQuery to getAllPosts function
+      const response = await getAllPosts(searchQuery);
+      setPosts(response);
+      setIsLoading(false);
+    } catch (error) {
+      setIsLoading(false);
+      setError("An error occurred fetching the post.");
+    }
+  };
+  const handleSearch = (searchQuery: string) => {
+    fetchPosts(searchQuery);
+  };
 
   return (
     <>
@@ -80,6 +96,7 @@ const Home: React.FC<HomeProps> = () => {
               <p className="mt-4 text-lg text-slate-600 dark:text-slate-400">
                 Get our latest stories{" "}
               </p>
+              <SearchBar onSearch={handleSearch} />
             </div>
             {isLoading && <>Loading...</>}
             <ul className="grid max-w-[26rem] sm:max-w-[52.5rem] mt-4 sm:mt-4 md:mt-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mx-auto gap-6 lg:gap-y-8 xl:gap-x-8 lg:max-w-7xl px-4 sm:px-6 lg:px-8">

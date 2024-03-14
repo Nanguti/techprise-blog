@@ -1,9 +1,14 @@
 import axios from "axios";
 import { Post } from "./types";
 
-export const getAllPosts = async () => {
+export const getAllPosts = async (query?: string) => {
   try {
-    const response = await axios.get("/api/posts");
+    let response;
+    if (query == null || query === "") {
+      response = await axios.get(`/api/posts`);
+    } else {
+      response = await axios.get(`/api/search/${query}`);
+    }
     return response.data;
   } catch (error) {
     throw new Error("Error fetching posts");

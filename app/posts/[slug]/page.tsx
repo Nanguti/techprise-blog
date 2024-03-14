@@ -5,6 +5,8 @@ import { Post } from "@utils/types";
 import MotionWrapper from "@components/MotionWrapper";
 import Link from "next/link";
 import Image from "next/image";
+import { useSession } from "next-auth/react";
+
 type Params = {
   slug: string;
 };
@@ -16,6 +18,8 @@ const PostDetailPage = ({ params }: Props) => {
   const [post, setPost] = useState<Post | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const { data: session } = useSession();
+  const userId = (session as { user?: { id?: string } })?.user?.id || "";
 
   useEffect(() => {
     const slug = params.slug;
@@ -79,12 +83,16 @@ const PostDetailPage = ({ params }: Props) => {
                     {" "}
                     {post && post.title}
                   </h2>
-                  <Link
-                    href={`/update-post/${post?.slug}`}
-                    className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mr-4"
-                  >
-                    Update Post
-                  </Link>
+                  {userId === post?.creator?._id && (
+                    <>
+                      <Link
+                        href={`/update-post/${post?.slug}`}
+                        className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mr-4"
+                      >
+                        Update Post
+                      </Link>
+                    </>
+                  )}
                   <Image
                     src={post?.creator?.image || "/default-profile-image.jpg"}
                     width={37}
