@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.post-detail-banner {
+  min-height: 300px !important;
+  box-sizing: border-box;
+}

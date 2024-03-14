@@ -63,6 +63,21 @@ const Home: React.FC<HomeProps> = () => {
     fetchPosts(searchQuery);
   };
 
+  const images = [
+    "/logos/Laravel.png",
+    "/logos/MongoDB.png",
+    "/logos/MySQL.png",
+    "/logos/Python.png",
+    "/logos/React.png",
+    "/logos/SQlite.png",
+    "/logos/Vue.png",
+  ];
+
+  const getRandomImage = () => {
+    const randomIndex = Math.floor(Math.random() * images.length);
+    return images[randomIndex];
+  };
+
   return (
     <>
       <>
@@ -123,7 +138,7 @@ const Home: React.FC<HomeProps> = () => {
                         decoding="async"
                         data-nimg={1}
                         className="absolute inset-0 w-full h-full"
-                        src="/showcase/openai.com.86b03227.png"
+                        src={getRandomImage()}
                         style={{ color: "transparent" }}
                       />
                       <div>

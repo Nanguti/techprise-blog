@@ -46,29 +46,6 @@ const PostDetailPage = ({ params }: Props) => {
   return (
     <MotionWrapper>
       <div className="overflow-hidden py-20 bg-white">
-        <div className="max-w-8xl mx-auto">
-          <div className="flex px-4 pt-8 pb-10 lg:px-8">
-            <Link
-              className="group flex font-semibold text-sm leading-6 text-slate-700 hover:text-slate-900 dark:text-slate-200 dark:hover:text-white"
-              href="/"
-            >
-              <svg
-                viewBox="0 -9 3 24"
-                className="overflow-visible mr-3 text-slate-400 w-auto h-6 group-hover:text-slate-600 dark:group-hover:text-slate-300"
-              >
-                <path
-                  d="M3 0L0 3L3 6"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              Go back
-            </Link>
-          </div>
-        </div>
         <div className="flex justify-center ">
           {isLoading && <p>Loadng...</p>}
         </div>
@@ -77,7 +54,7 @@ const PostDetailPage = ({ params }: Props) => {
           <div className="max-w-3xl mx-auto">
             <main>
               <article className="relative pt-10">
-                <div className="flex items-center">
+                <div className="flex justify-center">
                   {" "}
                   <h2 className="text-2xl font-extrabold tracking-tight text-slate-900 dark:text-slate-200 md:text-3xl mr-4">
                     {" "}
@@ -93,22 +70,39 @@ const PostDetailPage = ({ params }: Props) => {
                       </Link>
                     </>
                   )}
-                  <Image
-                    src={post?.creator?.image || "/default-profile-image.jpg"}
-                    width={37}
-                    height={37}
-                    className="rounded-full"
-                    alt="profile"
-                  />
-                </div>
-
-                <div className="my-4">
                   {post && (
                     <>
-                      Published Date:{` `}{" "}
+                      <Image
+                        src={post?.creator?.image || "/default-user.png"}
+                        width={37}
+                        height={37}
+                        className="rounded-full"
+                        alt="profile"
+                      />
+                    </>
+                  )}
+                </div>
+
+                <div className="my-4 flex justify-center">
+                  {post && (
+                    <>
+                      Date Published:{` `}{" "}
                       {post.date_published.substring(0, 10)}
                     </>
                   )}
+                </div>
+                <div className="container mx-auto px-4">
+                  <div className="relative bg-gradient-to-r from-purple-600 to-blue-600 h-450 text-white overflow-hidden rounded-lg">
+                    <div className="absolute inset-0">
+                      <img
+                        src="https://images.unsplash.com/photo-1522252234503-e356532cafd5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw2fHxjb2RlfGVufDB8MHx8fDE2OTQwOTg0MTZ8MA&ixlib=rb-4.0.3&q=80&w=1080"
+                        alt="Background Image"
+                        className="object-cover object-center w-full h-full rounded-lg"
+                      />
+                      <div className="absolute inset-0 bg-black opacity-50 rounded-lg" />
+                    </div>
+                    <div className="relative post-detail-banner z-10 flex flex-col justify-center items-center h-full text-center"></div>
+                  </div>
                 </div>
                 <div className="mt-12 prose prose-slate dark:prose-dark">
                   {post && post.content}
