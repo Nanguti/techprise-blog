@@ -7,7 +7,6 @@ import { getAllPosts } from "@utils/api";
 import { Post } from "@utils/types";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-export const revalidate = 0;
 
 interface HomeProps {}
 
@@ -24,6 +23,10 @@ const Home: React.FC<HomeProps> = () => {
       try {
         setIsLoading(true);
         const response = await getAllPosts();
+        response.headers.set(
+          "cache-control",
+          "no-cache, no-store, must-revalidate"
+        );
         setIsLoading(false);
         setPosts(response);
       } catch (error: any) {
