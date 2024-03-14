@@ -1,7 +1,8 @@
-// types.ts
 export interface User {
-  id: string;
-  name: string;
+  _id: string;
+  email: string;
+  username: string;
+  image: string;
 }
 
 export interface Post {
@@ -12,4 +13,5 @@ export interface Post {
   content: string;
   date_published: string;
   userId: string;
+  creator?: User;
 }
