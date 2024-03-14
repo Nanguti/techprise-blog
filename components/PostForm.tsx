@@ -7,7 +7,7 @@ import { PhotoIcon } from "@heroicons/react/24/solid";
 
 type FormProps = {
   initialPost?: Post; // Optional initial post data for updates
-  onSubmit?: (formData: Post) => Promise<void>; // Add this property
+  onSubmit?: (formData: Post) => Promise<void>;
 };
 
 const PostForm: React.FC<FormProps> = ({ initialPost }) => {
@@ -53,7 +53,6 @@ const PostForm: React.FC<FormProps> = ({ initialPost }) => {
       const response = initialPost?._id
         ? await updatePost(initialPost._id, formData)
         : await createPost(formData);
-      console.log("---> resposne " + response);
       router.push(`/posts/${response.slug}`);
     } catch (error: any) {
       console.error(error);

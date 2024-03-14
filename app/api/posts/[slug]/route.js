@@ -15,9 +15,7 @@ export const GET = async (request, { params }) => {
 };
 
 export const PUT = async (request, { params }) => {
-  console.log("Update function form here " + params.slug);
   const { title, content, slug, image } = await request.json();
-  console.log("Title in update method " + title);
 
   try {
     await connectToDB();
@@ -35,9 +33,9 @@ export const PUT = async (request, { params }) => {
     existingPost.content = content;
     existingPost.image = image;
 
-    await existingPost.save();
+    const post = await existingPost.save();
 
-    return new Response("Successfully updated the Posts", { status: 200 });
+    return new Response(JSON.stringify(post), { status: 200 });
   } catch (error) {
     return new Response("Error Updating Post", { status: 500 });
   }

@@ -73,7 +73,14 @@ const PostDetailPage = ({ params }: Props) => {
             <main>
               <article className="relative pt-10">
                 <h2 className="text-2xl font-extrabold tracking-tight text-slate-900 dark:text-slate-200 md:text-3xl ">
-                  {post && post.title}
+                  {post && post.title}{" "}
+                  <Link
+                    href={`/update-post/${post?.slug}`}
+                    className=" rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  >
+                    {" "}
+                    Update Post
+                  </Link>
                 </h2>
                 <div className="my-4">
                   {post && (
