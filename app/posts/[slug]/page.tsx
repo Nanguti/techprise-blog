@@ -46,6 +46,29 @@ const PostDetailPage = ({ params }: Props) => {
   return (
     <MotionWrapper>
       <div className="overflow-hidden py-20 bg-white">
+        <div className="max-w-8xl mx-auto">
+          <div className="flex px-4 pt-8 pb-2 lg:px-8">
+            <Link
+              className="group flex font-semibold text-sm leading-6 text-slate-700 hover:text-slate-900 dark:text-slate-200 dark:hover:text-white"
+              href="/"
+            >
+              <svg
+                viewBox="0 -9 3 24"
+                className="overflow-visible mr-3 text-slate-400 w-auto h-6 group-hover:text-slate-600 dark:group-hover:text-slate-300"
+              >
+                <path
+                  d="M3 0L0 3L3 6"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              Go back to blog posts
+            </Link>
+          </div>
+        </div>
         <div className="flex justify-center ">
           {isLoading && <p>Loadng...</p>}
         </div>
