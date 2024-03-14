@@ -41,9 +41,8 @@ const PostDetailPage = ({ params }: Props) => {
     if (post && post._id) {
       try {
         await updatePost(post._id, formData);
-        // ...
       } catch (error: any) {
-        // ...
+        console.log(error);
       }
     } else {
       console.error("Post data is not available for update.");
@@ -55,9 +54,8 @@ const PostDetailPage = ({ params }: Props) => {
       if (confirm("Are you sure you want to delete this post?")) {
         try {
           await deletePost(post._id);
-          // ...
         } catch (error: any) {
-          // ...
+          console.log(error);
         }
       }
     } else {
@@ -72,7 +70,7 @@ const PostDetailPage = ({ params }: Props) => {
         {error && <div className="error-message">{error}</div>}
         {post && (
           <>
-            {post.author && <p>By: {post.author.name}</p>}
+            {post.creator && <p>By: {post.creator.username}</p>}
 
             <PostForm initialPost={post} onSubmit={handleUpdate} />
 

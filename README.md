@@ -34,12 +34,12 @@ This project is a simple blog built using Next.js with TypeScript and styled wit
 
 1. **Clone the Repository:**
 
-Clone the repo, cd into the project and run development server
+   Clone the repo, cd into the project and run development server
 
-    ```bash
-    git clone https://github.com/Nanguti/techprise-blog.git
-    cd techprise-blog
-    ```
+   ```bash
+   git clone https://github.com/Nanguti/techprise-blog.git
+   cd techprise-blog
+   ```
 
 2. **Install dependencies and run development server**
 
