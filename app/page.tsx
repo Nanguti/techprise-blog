@@ -23,10 +23,6 @@ const Home: React.FC<HomeProps> = () => {
       try {
         setIsLoading(true);
         const response = await getAllPosts();
-        response.headers.set(
-          "cache-control",
-          "no-cache, no-store, must-revalidate"
-        );
         setIsLoading(false);
         setPosts(response);
       } catch (error: any) {
