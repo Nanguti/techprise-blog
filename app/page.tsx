@@ -7,6 +7,7 @@ import { getAllPosts } from "@utils/api";
 import { Post } from "@utils/types";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+export const revalidate = 0;
 
 interface HomeProps {}
 
