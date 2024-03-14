@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { createPost, updatePost } from "../utils/api";
 import { Post } from "@utils//types";
 import { PhotoIcon } from "@heroicons/react/24/solid";
+import { useSession } from "next-auth/react";
 
 type FormProps = {
   initialPost?: Post; // Optional initial post data for updates
@@ -12,13 +13,15 @@ type FormProps = {
 
 const PostForm: React.FC<FormProps> = ({ initialPost }) => {
   const router = useRouter();
+  const { data: session } = useSession();
+  const userId = (session as { user?: { id?: string } })?.user?.id || "";
   const [formData, setFormData] = useState<Post>({
     title: "",
     slug: "",
     image: "",
     content: "",
     date_published: new Date().toISOString(),
-    author: { id: "1", name: "Default Author" },
+    userId: userId,
   });
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);

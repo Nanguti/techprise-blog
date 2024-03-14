@@ -2,7 +2,6 @@
 export interface User {
   id: string;
   name: string;
-  // Add other user properties if needed
 }
 
 export interface Post {
@@ -12,5 +11,5 @@ export interface Post {
   image: string;
   content: string;
   date_published: string;
-  author: User; // Link to the user who created the post
+  userId: string;
 }
