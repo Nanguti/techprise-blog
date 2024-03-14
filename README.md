@@ -1,6 +1,6 @@
-# Next.js TypeScript Blog with Tailwind CSS
+# Next.js TypeScript Blog with Tailwind CSS and NEXTAUTH
 
-This project is a simple blog built using Next.js with TypeScript and styled with Tailwind CSS. It includes features such as a blog home page, individual blog post pages, and responsiveness for various screen sizes.
+This project is a simple blog built using Next.js with TypeScript and styled with Tailwind CSS. It includes features such as a blog home page, individual blog post pages, user registration and login functionality with NEXTAUTH, user post creation and update capabilities, and the ability to add user images from Google.
 
 ## Features
 
@@ -16,13 +16,18 @@ This project is a simple blog built using Next.js with TypeScript and styled wit
    - Includes a back button to navigate back to the homepage.
    - Styled using Tailwind CSS.
 
-3. **Blog Data:**
+3. **User Authentication and Authorization:**
+
+   - Utilizes NEXTAUTH for user registration and login functionality.
+   - Logged-in users are able to create and update their posts.
+   - User images can be added from Google.
+
+4. **Blog Data:**
 
    - Utilizes MongoDB to store blog data.
    - Utilizes the power of Next.js to create APIs to handle data storage and manipulation.
 
-4. **Responsive Design:**
-
+5. **Responsive Design:**
    - Utilizes Tailwind CSS classes for responsiveness.
 
 ## Setup Instructions
