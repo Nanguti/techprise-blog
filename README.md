@@ -1,38 +1,70 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js TypeScript Blog with Tailwind CSS
 
-## Getting Started
+This project is a simple blog built using Next.js with TypeScript and styled with Tailwind CSS. It includes features such as a blog home page, individual blog post pages, and responsiveness for various screen sizes.
 
-First, run the development server:
+## Features
+
+1. **Blog Home Page:**
+
+   - Displays a list of blog posts with titles, publication dates, and brief excerpts.
+   - Styled using Tailwind CSS.
+
+2. **Blog Post Page:**
+
+   - Implements dynamic routing for individual blog posts (e.g., `/posts/[slug]`).
+   - Displays the full content of a blog post.
+   - Includes a back button to navigate back to the homepage.
+   - Styled using Tailwind CSS.
+
+3. **Blog Data:**
+
+   - Utilizes MongoDB to store blog data.
+   - Utilizes the power of Next.js to create APIs to handle data storage and manipulation.
+
+4. **Responsive Design:**
+
+   - Utilizes Tailwind CSS classes for responsiveness.
+
+## Setup Instructions
+
+1. **Clone the Repository:**
+
+clone the repo, cd into the project and run development server
+
+```bash
+git clone https://github.com/Nanguti/techprise-blog.git
+cd techprise-blog
+```
+
+2. **Install dependencies and run development server**
+
+```bash
+npm install
+npm run dev
+```
+
+3. **Set Environment Variables:**
+   Create a `.env.local` file in the root directory and add the following environment variables:
+
+```bash
+MONGODB_URI=<your-mongodb-uri>
+NEXTAUTH_URL=http://localhost:3000/
+GOOGLE_CLIENT_ID=<your-google-client-id>
+GOOGLE_CLIENT_SECRET=<your-google-client-secret>
+```
+
+Visit Google Cloud Console[Google Cloud Console](https://console.cloud.google.com/) to set, `GOOGLE_CLIENT_ID=<your-google-client-id>`, and
+`GOOGLE_CLIENT_SECRET=<your-google-client-secret>`. This setup will enable you to login using google account.
+
+4. **Start the Development Server:**
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+5. **View the Application:**
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-"# nextjs-typescript-blog" 
-"# nextjs-typescript-blog" 
+Check out delopyed version on vercel [Techprise Blog](https://techprise-blog.vercel.app/)
