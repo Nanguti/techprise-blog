@@ -4,7 +4,7 @@ import { Post } from "./types";
 export const getAllPosts = async (query?: string) => {
   try {
     let response;
-    if (query == null || query === "") {
+    if (query == null) {
       response = await axios.get(`/api/posts`);
     } else {
       response = await axios.get(`/api/search/${query}`);

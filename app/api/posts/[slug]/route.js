@@ -44,9 +44,7 @@ export const PUT = async (request, { params }) => {
 export const DELETE = async (request, { params }) => {
   try {
     await connectToDB();
-
-    // Find the post by ID and remove it
-    await Post.findByIdAndRemove(params.id);
+    await Post.findByIdAndRemove(params.slug);
 
     return new Response("Post deleted successfully", { status: 200 });
   } catch (error) {
