@@ -69,7 +69,7 @@ const Home: React.FC<HomeProps> = () => {
     "/logos/MySQL.png",
     "/logos/Python.png",
     "/logos/React.png",
-    "/logos/SQlite.png",
+    "/logos/SQLite.png",
     "/logos/Vue.png",
   ];
 

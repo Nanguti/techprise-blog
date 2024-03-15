@@ -42,6 +42,7 @@ export const PUT = async (request, { params }) => {
 };
 
 export const DELETE = async (request, { params }) => {
+  console.log("Log delete here  " + params.slug);
   try {
     await connectToDB();
     await Post.findByIdAndRemove(params.slug);
